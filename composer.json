@@ -1,0 +1,26 @@
+{
+    "name": "gaussdev/categorywidget",
+    "require": {
+        "php": "~5.5.0|~5.6.0",
+        
+        "magento/magento-composer-installer": "*"
+    },
+
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "GaussDev\\CategoryWidget\\": "src/"
+        }
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "GaussDev/CategoryWidget"
+            ]
+        ]
+    }
+}

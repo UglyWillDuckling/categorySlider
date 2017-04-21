@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="gauss_catalog_category_slider"
+            class="GaussDev\CategoryWidget\Widget\Category">
+        <label translate="true">Gauss Category Slider</label>
+        <description translate="true">Category slider widget</description>
+        <parameters>
+            <parameter name="id_path" xsi:type="block" visible="true" required="true" sort_order="10">
+                <label translate="true">Category</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="title" xsi:type="text" visible="true">
+                <label translate="true">Title</label>
+                <description translate="true">title for the slider, leave it empty if the title isn't needed</description>
+            </parameter>
+            <parameter name="items" xsi:type="text" visible="true">
+                <label translate="true">Number of products to show</label>
+                <description translate="true">default is 10</description>
+            </parameter>
+            <parameter name="items_per_slide" xsi:type="text" visible="true">
+                <label translate="true">Number of products to show per slide</label>
+                <description translate="true">default is 4</description>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default"
+                            value="GaussDev_CategoryWidget::widget/category/slider.phtml"
+                            selected="true">
+                        <label translate="true">Category Slider Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cart" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display AddToCartButton</label>
+                <description translate="true">choose whether or not you wish to have an add to cart button on the slider</description>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
