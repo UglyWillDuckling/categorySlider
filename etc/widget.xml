@@ -48,6 +48,21 @@
                 <label translate="true">Display AddToCartButton</label>
                 <description translate="true">choose whether or not you wish to have an add to cart button on the slider</description>
             </parameter>
+            <parameter name="nav" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Navigation arrows</label>
+                <description translate="true">choose whether or not you wish to have navigation for the slider</description>
+            </parameter>
+            <parameter name="dots" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display dots</label>
+                <description translate="true">choose whether or not you wish to show navigational dots for the slider</description>
+            </parameter>
+            <parameter name="loop" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Loop slides</label>
+                <description translate="true">choose whether or not you wish to have the slider loop through the slides</description>
+            </parameter>
         </parameters>
     </widget>
 </widgets>

@@ -1,13 +1,20 @@
 <?php
 namespace GaussDev\CategoryWidget\Widget;
 
-use Magento\Framework\View\Element\Template;
 use Magento\Catalog\Model\CategoryFactory;
+
+
 
 class Category extends \Magento\Catalog\Block\Product\AbstractProduct implements \Magento\Widget\Block\BlockInterface
 {
     protected $categoryFactory;
 
+    /**
+     * Category constructor.
+     * @param \Magento\Catalog\Block\Product\Context $context
+     * @param CategoryFactory $categoryFactory
+     * @param array $data
+     */
     public function __construct(
         \Magento\Catalog\Block\Product\Context $context,
         CategoryFactory $categoryFactory,
@@ -17,9 +24,11 @@ class Category extends \Magento\Catalog\Block\Product\AbstractProduct implements
         $this->categoryFactory = $categoryFactory;
     }
 
-
-    public function getProductCollection(){
-
+    /**
+     * @return bool|mixed
+     */
+    public function getProductCollection()
+    {
         if($this->getData('product_collection')){
            return $this->getData('product_collection');
         }
@@ -39,23 +48,17 @@ class Category extends \Magento\Catalog\Block\Product\AbstractProduct implements
         return false;
     }
 
-    public function getTitle(){
-        return $this->getData('title');
-    }
-
+    /**
+     * @return int
+     */
     public function getItemsPerSlide(){
         return $this->getData('items_per_slide') ?: 4;
     }
 
+    /**
+     * @return int
+     */
     public function getItemsPerPage(){
         return $this->getData('items') ?: 10;
-    }
-
-    public function getSortBy(){
-        return $this->getData('sortby') ?: 'position';
-    }
-
-     public function getShowCart(){
-        return $this->getData('cart') ?: false;
     }
 }

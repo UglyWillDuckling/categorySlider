@@ -34,8 +34,7 @@
                      </strong>
 <!--                     --><?php //echo $block->getProductPriceHtml($_item, $type); ?>
                  </div>
-
-                <?php if($block->getShowCart()): ?>
+                 <?php if($block->getCart()): ?>
                     <div class="actions-primary">
                         <?php if ($_item->isSaleable()): ?>
                             <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
@@ -63,7 +62,7 @@
                             <?php endif; ?>
                         <?php endif; ?>
                     </div>
-                <?php endif; ?>
+                 <?php endif; ?>
             <?php endforeach; ?>
              </div>
          </div>
@@ -76,12 +75,10 @@
         ], function ($) {
             $(function () {
                 $("<?php echo $slider_id ?>").owlCarousel({
-                    loop: true,
-                    nav: true,
-                    dots: false,
-                    responsive: {
-                        0: {items: 1}, 400: {items: 1}, 450: {items: 2}, 650: {items: 3}, 950: {items: 4}
-                    }
+                    loop: <?php echo $block->getLoop() ?>,
+                    nav: <?php echo $block->getNav() ?>,
+                    dots: <?php echo $block->getDots() ?>,
+                    items: <?php echo $block->getItemsPerSlide() ?>
                 });
             });
         });
